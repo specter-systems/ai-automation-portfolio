@@ -10,15 +10,23 @@ connectors, Python data pipelines, and email/WhatsApp outreach systems.
 
 ## How to read this page
 
-Work here is split into two honest buckets:
+Work here is split into three honest buckets:
 
 - **Shipped** — built, deployed, and running in production for a real organisation.
-- **Demo** — built and working, but not yet deployed for a paying client. Numbers on
-  these are my own estimates from testing, clearly marked. They are not client results.
+  Client code is private; these are descriptions.
+- **Demo** — public code in this repo you can clone, run and read the tests of.
+- **Can build on request** — scoped and understood, but not built. No code yet.
 
 I'd rather tell you which is which than have you find out later.
 
 ---
+
+## What is public here
+
+Client code stays private. What you can actually read and run is the invoice extractor below,
+and [`mcp-oauth-starter`](https://github.com/specter-systems/mcp-oauth-starter) in its own
+repo. Everything under **Shipped** was built for a real organisation and is described here
+rather than published.
 
 ## Shipped
 
@@ -29,6 +37,10 @@ Three production MCP servers built on a reusable OAuth 2.1 server pattern.
   comments, conversations, insights and moderation across both platforms
 - **LinkedIn** connector — authenticated posting, image posts, profile and token status
 - Shared auth layer, so a new platform is a config change rather than a rewrite
+
+The reusable auth layer is published as a standalone reference implementation you can read:
+**[mcp-oauth-starter](https://github.com/specter-systems/mcp-oauth-starter)** — OAuth 2.1 resource
+server on the 2026-07-28 MCP spec, with tests.
 
 `Python` · `MCP` · `OAuth 2.1` · `Meta Graph API` · `LinkedIn API` · `Vercel`
 
@@ -72,21 +84,31 @@ Custom Shopify app bridging a live storefront to an **Odoo v19** backend.
 
 ---
 
-## Demos
+## Demo
 
 Built and working. Not yet run for a paying client — figures are my own test estimates.
 
-### PDF data extractor
-Invoice and financial-document extraction for accounting workflows.
+### Invoice extractor — runnable
+**[`projects/invoice-extractor`](projects/invoice-extractor)** · 28 tests, no API key needed
 
-- Documents in via email or API
-- Claude extracts structured fields — vendor, amount, date, line items
-- Writes to Google Sheets, flags anomalies for human review
+PDF invoices in, validated structured data out. Claude reads the page; deterministic Python
+decides whether a human needs to see it.
 
-*Estimated saving in my own testing: several hours per week at typical small-firm volume.
+- Structured-output extraction against a pinned JSON schema, then re-validated with Pydantic
+- Every figure the model returns is re-checked in plain Python — line maths, subtotal, total
+- Catches future dates, negative prices, over-threshold invoices, and the same invoice number
+  twice in one batch (the duplicate that becomes a double payment)
+- Money is `Decimal` throughout; scanned PDFs raise rather than returning an empty string
+- Non-zero exit code when a person needs to intervene, so it drops into cron or CI
+
+*Ships with a deliberately broken sample invoice so you can watch the checks fire.
 Not a measured client result.*
 
-`Claude API` · `n8n` · `Python`
+`Claude API` · `Python` · `Pydantic` · `pypdf`
+
+## Can build on request
+
+Described, not built. No code here yet — listed so you know what is in scope.
 
 ### Meeting summariser & action tracker
 Transcript in, executive summary and assigned action items out.
