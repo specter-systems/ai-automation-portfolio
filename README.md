@@ -160,5 +160,5 @@ small — you should be able to test whether I'm worth hiring without a large co
 ## Contact
 
 - Email — [specter00000000@gmail.com](mailto:specter00000000@gmail.com)
-- Fiverr — [fiverr.com/s/dDmB3YZ](https://www.fiverr.com/specter_nihal)
+- Fiverr — [fiverr.com/specter_nihal](https://www.fiverr.com/specter_nihal)
 - Telegram — [@specter0bot](https://t.me/specter0bot)
