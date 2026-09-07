@@ -4,7 +4,7 @@ I build AI agents and automation that run real business workflows: Claude MCP
 connectors, Python data pipelines, and email/WhatsApp outreach systems.
 
 **SPECTER SYSTEMS** · Doha, Qatar (GMT+3) · remote worldwide
-[Site](https://specter-vale.github.io) · [Fiverr](https://www.fiverr.com/s/dDmB3YZ) · [Email](mailto:specter00000000@gmail.com)
+[Site](https://specter-systems.github.io) · [Fiverr](https://www.fiverr.com/s/dDmB3YZ) · [Email](mailto:specter00000000@gmail.com)
 
 ---
 
