@@ -8,6 +8,9 @@ connectors, Python data pipelines, and email/WhatsApp outreach systems.
 
 ---
 
+[![tests](https://github.com/specter-systems/ai-automation-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/specter-systems/ai-automation-portfolio/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 ## How to read this page
 
 Work here is split into three honest buckets:
