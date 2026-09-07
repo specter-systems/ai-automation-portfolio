@@ -1,0 +1,21 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  invoice-extractor:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/invoice-extractor
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: python samples/make_sample_invoices.py
+      - run: pytest -q
