@@ -1,28 +1,36 @@
-# Project: Lead Qualification Bot
+# Lead qualification bot — design only
 
-**Status:** In Development  
-**Stack:** Claude API + n8n + Telegram + Google Sheets
+**Status:** Not built. No code in this folder.
+**Intended stack:** Claude API · n8n · Telegram · Google Sheets
 
-## Overview
-AI-powered bot that qualifies leads through natural conversation before they reach your CRM.
+## What it would do
 
-## How It Works
-1. Lead submits form on website
-2. Bot initiates conversation via Telegram/Slack
-3. Asks qualifying questions (budget, timeline, needs)
-4. Scores lead based on responses (Hot/Warm/Cold)
-5. Sends qualified leads to CRM, archives cold ones
-6. Notifies sales team of hot leads instantly
+Qualify inbound leads in conversation before they reach a CRM.
+
+1. Lead submits a form on the site
+2. Bot opens a conversation over Telegram or Slack
+3. Asks qualifying questions — budget, timeline, needs
+4. Scores the lead against defined criteria (hot / warm / cold)
+5. Routes qualified leads to the CRM, archives cold ones
+6. Notifies the sales team on a hot lead
 
 ## Results
-- 40% higher conversion rate
-- 50% less CRM clutter
-- 5+ hours saved per week on manual qualification
 
-## Files
-- `workflow.json` - n8n workflow (coming soon)
-- `prompts/` - Claude prompts for conversation (coming soon)
-- `demo/` - Video walkthrough (coming soon)
+None. Nothing has been built, so there is nothing to measure.
+
+An earlier version of this file listed conversion and time-saving figures. They were
+projections, not measurements, and they should not have been written as results. They have
+been removed. Numbers appear in this portfolio only when they describe something that was
+actually built, and client outcome figures only when a client has agreed to them.
+
+## If you want this built
+
+The pieces that need deciding before it is worth writing: what your qualifying criteria
+actually are, where the leads land today, and who gets woken up for a hot one. That
+conversation is most of the work; the automation is the easy half.
+
+See [`projects/invoice-extractor`](../invoice-extractor) for a workflow of mine that *is*
+built, with tests you can run.
 
 ---
-*Part of the AI Automation Portfolio*
+*Part of the [Specter Systems](https://specter-systems.github.io) portfolio.*
